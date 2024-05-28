@@ -1,0 +1,15 @@
+.container {
+  border: 1px solid black;
+  display: flex;
+  gap: 100px;
+}
+
+.imgContainer {
+  flex: 1;
+  position: relative;
+  height: 100vh;
+}
+
+.img {
+  object-fit: cover;
+}
