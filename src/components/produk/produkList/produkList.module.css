@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters button,
+.filters select {
+  font-size: 14px;
+  background-color: #ebf9ec;
+  padding: 10px 24px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
