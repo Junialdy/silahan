@@ -18,3 +18,35 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item{
+  width: 23%;
+}
+
+@media screen and (max-width: 1280px) {
+  .item {
+    width:31%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .item {
+    width: 100%;
+  }
+
+  .filters{
+    flex-direction: column;
+  }
+}

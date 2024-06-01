@@ -1,38 +1,54 @@
-.container {
-  display: flex;
-  gap: 50px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid black;
+
+.heroContainer{
+  /* background-color: aquamarine; */
+  /* width: 100vw;
+  margin-left: -12vw; */
+  padding: 50px 0;
 }
 
 .textContainer {
+  width: 70%;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.title {
+.title{
   font-size: 50px;
 }
 
-.desc {
+.desc{
   font-size: 20px;
 }
 
-.imgContainer {
-  flex: 1;
-  position: relative;
+.listProduct{
+  padding: 50px 0;
 }
+
+.listTextContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.listTitle{
+  font-size: 24px;
+}
+
+.listDesc{
+  font-size: 16px;
+}
+
 
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
     text-align: center;
   }
-
-  .buttons {
-    justify-content: center;
+  .textContainer{
+    width: 100%;
   }
 }
 
@@ -41,7 +57,5 @@
     font-size: 64px;
   }
 
-  .brands {
-    width: 100%;
-  }
 }
+
