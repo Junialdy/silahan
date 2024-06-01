@@ -1,13 +1,13 @@
-import Produk from "@/components/produk/Produk";
-import styles from "./home.module.css";
+import Produk from '@/components/produk/Produk';
+import styles from './home.module.css'
 
-const Home = () => {
+const Homepage = () => {
   return (
-    <>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.heroContainer}>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>
-            Solusi Online untuk Petani dan Pemilik Lahan
+            Solusi Online untuk Petani dan Pemilik Lahan.
           </h1>
           <p className={styles.desc}>
             Temukan dan sewakan lahan pertanian dengan mudah melalui platform
@@ -16,11 +16,11 @@ const Home = () => {
             untuk memulai!
           </p>
         </div>
-        <div className={styles.imgContainer}></div>
       </div>
+      <hr />
       <Produk />
-    </>
+    </div>
   );
-};
+}
 
-export default Home;
+export default Homepage;

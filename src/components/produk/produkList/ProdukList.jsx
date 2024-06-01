@@ -17,14 +17,30 @@ const ProdukList = () => {
         </select>
       </div>
       <div className={styles.list}>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
+        <div className={styles.item}>
         <ProdukCard />
+        </div>
       </div>
     </div>
   );

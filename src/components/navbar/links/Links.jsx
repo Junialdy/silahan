@@ -5,7 +5,8 @@ import Link from "next/link";
 import styles from "./links.module.css";
 import Image from "next/image";
 
-const left = [
+
+const links = [
   {
     title: "Beranda",
     path: "/",
@@ -18,9 +19,6 @@ const left = [
     title: "Hubungi Kami",
     path: "/kontak",
   },
-];
-
-const right = [
   {
     title: "Pasang Iklan",
     path: "/iklan",
@@ -32,24 +30,12 @@ const right = [
 ];
 
 const Links = () => {
-  const [open, setOpen] = useState(false);
-
+const [open, setOpen] = useState(false);
   return (
     <div className={styles.container}>
       <div className={styles.links}>
-        {left.map((link) => (
-          <Link href={link.path} key={link.title}>
-            {link.title}
-          </Link>
-        ))}
-        <div>
-          <input type="search" name="searchbar" className={styles.searchBar} />
-          <span>X</span>
-        </div>
-      </div>
-      <div className={styles.buttons}>
-        {right.map((link) => (
-          <Link href={link.path} key={link.title} className={styles.button}>
+        {links.map((link) => (
+          <Link href={link.path} key={link.title} className={styles.link}>
             {link.title}
           </Link>
         ))}
@@ -64,7 +50,7 @@ const Links = () => {
       />
       {open && (
         <div className={styles.mobileLinks}>
-          {left.map((link) => (
+          {links.map((link) => (
             <Link href={link.path} key={link.title}>
               {link.title}
             </Link>
