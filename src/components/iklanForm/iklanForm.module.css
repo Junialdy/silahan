@@ -1,0 +1,103 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.formSection h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.formInput {
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.formInputCol {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formInputCol em {
+  color: red;
+}
+
+.formInputCol textarea {
+  resize: none;
+}
+
+.formInputCol input,
+.formInputCol textarea,
+.formInputCol select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+  font-family: inherit;
+  font-weight: 400;
+  /* opacity: 50%; */
+  margin-top: 5px;
+}
+
+.formInputCol input[type="radio"] {
+  display: none;
+}
+
+.formInputCol label label {
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.formInputCol label span {
+  position: relative;
+  line-height: 22px;
+}
+
+.formInputCol label span::before,
+.formInputCol label span::after {
+  content: "";
+  border-radius: 5px;
+}
+
+.formInputCol label span::before {
+  border: 1px solid #222021;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.formInputCol label span::after {
+  background: #222021;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 1px;
+  transition: 300ms;
+  opacity: 0;
+}
+
+.formInputCol input:checked + span::after {
+  opacity: 1;
+}
+
+.button {
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: var(--black);
+}
