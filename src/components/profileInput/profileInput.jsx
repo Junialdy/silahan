@@ -23,7 +23,7 @@ const ProfileInput = () => {
     <div className={styles.container}>
       <label>
         <Image
-          src={profilePreview ? profilePreview : "/noavatar.png"}
+          src={profilePreview || "/noavatar.png"}
           alt=""
           width={95}
           height={95}
