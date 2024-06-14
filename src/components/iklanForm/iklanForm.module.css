@@ -101,3 +101,10 @@
   font-family: inherit;
   background-color: var(--black);
 }
+
+@media (max-width: 768px) {
+  .formInput {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
