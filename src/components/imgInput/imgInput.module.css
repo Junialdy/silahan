@@ -1,0 +1,37 @@
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imgList {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.fileContainer {
+  aspect-ratio: 1 / 1;
+  width: 95px;
+  position: relative;
+}
+
+.fileContainer img,
+.fileContainer video {
+  border: 1px solid var(--black);
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.button {
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: var(--black);
+}
