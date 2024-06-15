@@ -4,19 +4,32 @@
   gap: 20px;
 }
 
-.link:nth-last-child(1),.link:nth-last-child(2){
+.ctaDark {
   padding: 10px 15px;
   border-radius: 5px;
-}
-
-.link:nth-last-child(2){
   background-color: black;
   border: 1.5px solid black;
   color: white;
 }
-.link:nth-last-child(1){
+
+.ctaWhite {
+  padding: 10px 15px;
+  border-radius: 5px;
   background-color: white;
   border: 1.5px solid black;
+  color: black;
+}
+
+.isAdmin {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1.5px solid black;
+}
+
+.profilePic {
+  border: 1px solid var(--black);
+  border-radius: 100%;
 }
 
 .logout {
