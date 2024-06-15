@@ -1,8 +1,8 @@
 // "use client";
 
-import HargaInput from "../hargaInput/hargaInput";
-import ImgInput from "../imgInput/imgInput";
-import ProfileInput from "../profileInput/profileInput";
+import HargaInput from "./hargaInput/hargaInput";
+import ImgInput from "./imgInput/imgInput";
+import ProfileInput from "./profileInput/profileInput";
 import styles from "./iklanForm.module.css";
 
 import { addIklan } from "@/lib/action";
