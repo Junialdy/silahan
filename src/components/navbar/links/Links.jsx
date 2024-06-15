@@ -5,7 +5,6 @@ import Link from "next/link";
 import styles from "./links.module.css";
 import Image from "next/image";
 
-
 const links = [
   {
     title: "Beranda",
@@ -19,18 +18,22 @@ const links = [
     title: "Hubungi Kami",
     path: "/kontak",
   },
-  {
-    title: "Pasang Iklan",
-    path: "/iklan",
-  },
-  {
-    title: "Akun",
-    path: "/akun",
-  },
+  // {
+  //   title: "Pasang Iklan",
+  //   path: "/iklan",
+  // },
+  // {
+  //   title: "Akun",
+  //   path: "/akun",
+  // },
 ];
 
+// TEMPORARY
+const session = true;
+const isAdmin = false;
+
 const Links = () => {
-const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className={styles.container}>
       <div className={styles.links}>
@@ -39,6 +42,31 @@ const [open, setOpen] = useState(false);
             {link.title}
           </Link>
         ))}
+        <Link href="/iklan" className={styles.ctaDark}>
+          Pasang Iklan
+        </Link>
+        {isAdmin ? (
+          <Link href="/admin" className={styles.ctaWhite}>
+            Admin
+          </Link>
+        ) : (
+          <></>
+        )}
+        {session ? (
+          <Link href="/akun" className={styles.link}>
+            <Image
+              className={styles.profilePic}
+              src="/noavatar.png"
+              alt="Profile Picture"
+              width={50}
+              height={50}
+            />
+          </Link>
+        ) : (
+          <Link href="/login" className={styles.ctaWhite}>
+            Login
+          </Link>
+        )}
       </div>
       <Image
         className={styles.menuButton}
