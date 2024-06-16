@@ -5,7 +5,7 @@ const KontakPage = () => {
     <div>
       <h1>KontakPage</h1>
       <hr />
-      <Slider />
+      {/* <Slider /> */}
     </div>
   );
 };

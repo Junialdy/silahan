@@ -1,0 +1,244 @@
+.container > hr {
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* border: 1px solid red; */
+  width: 20%;
+}
+
+.sideNav > div {
+  /* border: 1px solid red; */
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sideNav > div:hover {
+  background-color: var(--lgreen);
+  transition: 300ms;
+}
+
+.sideNavActive {
+  background-color: var(--lgreen);
+}
+
+.details {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+
+.profileContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profilePic {
+  border-radius: 100%;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+.userName {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.userRole {
+  color: gray;
+}
+
+.lahanUser {
+  display: flex;
+  gap: 3%;
+  flex-wrap: wrap;
+}
+
+.lahanContainer {
+  width: 31%;
+}
+
+/* ======================= SectionDetail ======================= */
+.section {
+  border: 1px solid rgb(220, 220, 220);
+  display: flex;
+  gap: 20px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* .detailSection,
+.editSection {
+  border: 1px solid red;
+} */
+
+.detailSection {
+  width: 90%;
+}
+
+.editSection {
+  width: 10%;
+}
+
+.detailSection h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.info {
+  display: flex;
+  gap: 10%;
+}
+
+.leftInfo,
+.rightInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.editSection > button {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editSection > button:hover {
+  transition: 300ms;
+  background-color: var(--lgreen);
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.buttons > button {
+  border-radius: 5px;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.buttons > button:first-child {
+  background-color: white;
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+.buttons > button:last-child {
+  background-color: var(--black);
+  color: white;
+  border: 1px solid var(--black);
+}
+
+.buttons > button:hover {
+  transition: 300ms;
+  color: black;
+  background-color: var(--lgreen);
+}
+
+/*======================= DataCol =======================*/
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dataContainer > input {
+  /* width: 100%; */
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(220, 220, 220);
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.dataContainer > input:focus {
+  outline-width: 0;
+}
+
+.dataLabel {
+  font-weight: 400;
+  color: gray;
+}
+
+.dataValue {
+  font-weight: 500;
+}
+
+/*======================= Media Queries =======================*/
+
+@media (max-width: 1024px) {
+  .lahanUser {
+    gap: 20px;
+  }
+
+  .lahanContainer {
+    width: 47%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    gap: 0px;
+  }
+
+  .editSection {
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column;
+  }
+  .sideNav,
+  .details {
+    width: 100%;
+  }
+
+  .sideNav {
+    flex-direction: row;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .leftInfo,
+  .rightInfo {
+    width: 100%;
+  }
+
+  .lahanUser {
+    gap: 20px;
+  }
+
+  .lahanContainer {
+    width: 100%;
+  }
+}
