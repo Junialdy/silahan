@@ -9,3 +9,15 @@ export const addIklan = async (formData) => {
   //   console.log(luas, judul, desc, sertifikasi, media);
   console.log(formData);
 };
+
+// export const handleEdit = async (formData) => {
+//   "use server";
+
+//   const rawFormData = {
+//     email: formData.get("email"),
+//     nama: formData.get("nama"),
+//     nomorhp: formData.get("nomorhp"),
+//     nomorwa: formData.get("nomorwa"),
+//   };
+//   console.log(rawFormData);
+// };
