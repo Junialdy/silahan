@@ -73,6 +73,12 @@
   color: var(--green);
 }
 
+.middle {
+  display: flex;
+  gap: 10px;
+  align-items: normal;
+}
+
 .profile {
   display: flex;
   gap: 10px;
@@ -80,6 +86,7 @@
   padding: 5px 10px;
   border: 1px solid #e6e6e6;
   border-radius: 7px;
+  flex-basis: 100%;
 }
 
 .profile img {
@@ -90,6 +97,67 @@
 .username {
   font-size: 12px;
   font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  height: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.otherContainer {
+  position: absolute;
+  right: 10%;
+  border: 1px solid #e6e6e6;
+  padding: 10px 18px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.otherContainer > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.otherContainer > hr {
+  opacity: 0.3;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalContainer > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalContainer > form > button {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  background: rgb(235, 59, 106);
+  color: white;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .buttons {
@@ -126,6 +194,10 @@
 .bottomTitle {
   font-size: 24px;
   font-weight: 500;
+}
+
+.bottomDesc {
+  white-space: pre-line;
 }
 
 @media (max-width: 768px) {

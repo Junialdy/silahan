@@ -1,5 +1,6 @@
 import IklanForm from "@/components/iklanForm/iklanForm";
 import styles from "./iklan.module.css";
+import { addLahan } from "@/lib/action";
 
 const IklanPage = () => {
   return (
@@ -7,7 +8,7 @@ const IklanPage = () => {
       <div className={styles.header}>
         <h1>Pengisian Data Lahan</h1>
       </div>
-      <IklanForm />
+      <IklanForm aksi={addLahan} />
     </div>
   );
 };

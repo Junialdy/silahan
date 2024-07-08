@@ -1,11 +1,17 @@
 import Image from "next/image";
 import styles from "./singleProduct.module.css";
+import { getLahan } from "@/lib/data";
 
-const singleProductPage = ({ params }) => {
+import Icon from "./Icon";
+
+const singleProductPage = async ({ params }) => {
   const { slug } = params;
+
+  const lahan = await getLahan(slug);
 
   return (
     <>
+      {/* {console.log(lahan.desc)} */}
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.parentImgContainer}>
@@ -25,32 +31,39 @@ const singleProductPage = ({ params }) => {
         </div>
         <div className={styles.detailsContainer}>
           <div className={styles.top}>
-            <div className={styles.headline}>
-              <h1 className={styles.title}>Tanah Sawah Godzilla</h1>
+            <>
+              <h1 className={styles.title}>{lahan.judul}</h1>
               <p className={styles.price}>
-                Rp 10.900.000 <span className={styles.time}>/ 6 Bulan</span>
+                Rp {lahan.hargamin.toLocaleString("id-ID")}{" "}
+                <span className={styles.time}>/ {lahan.lamasewa} Bulan</span>
               </p>
-            </div>
+            </>
             <div className={styles.details}>
               <p>
-                Luas: <span>5.700m²</span>
+                Luas: <span>{lahan.luas.toLocaleString("id-ID")} m²</span>
               </p>
               <p>
-                Lokasi: <span>Muara Satu, Lhokseumawe, Aceh</span>
+                Lokasi:{" "}
+                <span>
+                  {lahan.kecamatan}, {lahan.kabkota}, {lahan.provinsi}
+                </span>
               </p>
               <p>
                 Sertifikasi: <span>SHM - Sertifikat Hak Milik</span>
               </p>
             </div>
-            <div className={styles.profile}>
-              <Image
-                className={styles.avatar}
-                src="/noavatar.png"
-                alt=""
-                width={40}
-                height={40}
-              />
-              <p className={styles.username}>Muhammad Abrar Siddiq</p>
+            <div className={styles.middle}>
+              <div className={styles.profile}>
+                <Image
+                  className={styles.avatar}
+                  src="/noavatar.png"
+                  alt=""
+                  width={40}
+                  height={40}
+                />
+                <p className={styles.username}>Muhammad Abrar Siddiq</p>
+              </div>
+              <Icon idlahan={lahan.id} slug={slug} />
             </div>
           </div>
           <div className={styles.buttons}>
@@ -62,13 +75,7 @@ const singleProductPage = ({ params }) => {
       <div className={styles.bottom}>
         <h2 className={styles.bottomTitle}>Deskripsi</h2>
         <hr />
-        <p className={styles.bottomDesc}>
-          Dijual tanah murah dengan view gunung Arjuna di lokasi strategis Kota
-          Batu. Luas 5.700m², SHM, harga 3,3 juta/m². Dekat jalan raya, wisata,
-          pusat perbelanjaan, sekolah, tempat ibadah, dan kuliner. Hubungi:
-          Gresia Dewi Global sukses properti. Kode iklan: bude pipa Vr L2 7419
-          Apr24.
-        </p>
+        <p className={styles.bottomDesc}>{lahan.desc}</p>
       </div>
     </>
   );

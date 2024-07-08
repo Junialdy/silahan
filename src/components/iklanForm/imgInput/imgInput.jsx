@@ -1,12 +1,14 @@
 "use client";
 
 import styles from "./imgInput.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
-const ImgInput = () => {
+const ImgInput = ({ data }) => {
   const [files, setFiles] = useState();
-  const [imgPreviews, setImgPreviews] = useState();
+  const [imgPreviews, setImgPreviews] = useState(
+    data?.media ? data?.media : ""
+  );
   const [vidPreviews, setVidPreviews] = useState();
 
   //   rendering previews
@@ -33,6 +35,7 @@ const ImgInput = () => {
       };
     }
   }, [files]);
+
   return (
     <>
       <label>
@@ -57,7 +60,7 @@ const ImgInput = () => {
               {imgPreviews.map((pic) => {
                 return (
                   <div className={styles.fileContainer} key={pic}>
-                    <Image src={pic} alt="" fill />
+                    <Image src={pic} alt="" fill sizes={95} />
                   </div>
                 );
               })}

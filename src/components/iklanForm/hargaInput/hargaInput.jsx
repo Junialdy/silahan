@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import CurrencyInput from "react-currency-input-field";
 
-const HargaInput = () => {
-  const [hargaFix, setHargaFix] = useState(true);
+const HargaInput = ({ data }) => {
+  const [hargaFix, setHargaFix] = useState(
+    data?.jenisharga == undefined
+      ? true
+      : data?.jenisharga == "fix"
+      ? true
+      : false
+  );
   return (
     <>
       <label>
@@ -11,21 +18,24 @@ const HargaInput = () => {
         <br />
         <label htmlFor="fix">
           <input
+            required
             type="radio"
             id="fix"
             name="jenisharga"
             value="fix"
-            defaultChecked
+            defaultChecked={data?.jenisharga == "fix" || true}
             onChange={() => setHargaFix((hargaFix) => !hargaFix)}
           />
           <span>Harga Tetap</span>
         </label>
         <label htmlFor="range">
           <input
+            required
             type="radio"
             id="range"
             name="jenisharga"
             value="range"
+            defaultChecked={data?.jenisharga == "range" || ""}
             onChange={() => setHargaFix((hargaFix) => !hargaFix)}
           />
           <span>Harga Kisaran</span>
@@ -34,17 +44,38 @@ const HargaInput = () => {
       {hargaFix ? (
         <label>
           Harga (Rp)<em>*</em>
-          <input type="text" name="harga" placeholder="cth: 12.000.000" />
+          <CurrencyInput
+            required
+            name="harga"
+            placeholder="cth: 12.000.000"
+            decimalSeparator=","
+            groupSeparator="."
+            defaultValue={data?.hargamin || ""}
+          />
         </label>
       ) : (
         <>
           <label>
             Harga Minimal (Rp)<em>*</em>
-            <input type="text" name="hargamin" placeholder="cth: 12.000.000" />
+            <CurrencyInput
+              required
+              name="hargamin"
+              placeholder="cth: 12.000.000"
+              decimalSeparator=","
+              groupSeparator="."
+              defaultValue={data?.hargamin || ""}
+            />
           </label>
           <label>
             Harga Maximal (Rp)<em>*</em>
-            <input type="text" name="hargamax" placeholder="cth: 12.000.000" />
+            <CurrencyInput
+              required
+              name="hargamax"
+              placeholder="cth: 12.000.000"
+              decimalSeparator=","
+              groupSeparator="."
+              defaultValue={data?.hargamax || ""}
+            />
           </label>
         </>
       )}
