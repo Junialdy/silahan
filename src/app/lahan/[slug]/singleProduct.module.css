@@ -7,6 +7,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 40%;
+}
+
+.sliderContainer {
+  width: 100%;
 }
 
 .parentImgContainer {
@@ -31,7 +36,7 @@
 }
 
 .detailsContainer {
-  width: 100%;
+  width: 55%;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -203,6 +208,11 @@
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+  }
+
+  .detailsContainer,
+  .left {
+    width: 100%;
   }
 }
 

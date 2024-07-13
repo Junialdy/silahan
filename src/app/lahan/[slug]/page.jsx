@@ -3,6 +3,7 @@ import styles from "./singleProduct.module.css";
 import { getLahan } from "@/lib/data";
 
 import Icon from "./Icon";
+import Slider from "@/components/slider/Slider";
 
 const singleProductPage = async ({ params }) => {
   const { slug } = params;
@@ -14,19 +15,24 @@ const singleProductPage = async ({ params }) => {
       {/* {console.log(lahan.desc)} */}
       <div className={styles.container}>
         <div className={styles.left}>
-          <div className={styles.parentImgContainer}>
-            <Image src="/imgCard.png" alt="" fill className={styles.img} />
-          </div>
-          <div className={styles.otherImgContainer}>
-            <div className={styles.childImgContainer}>
+          {/* <>
+            <div className={styles.parentImgContainer}>
               <Image src="/imgCard.png" alt="" fill className={styles.img} />
             </div>
-            <div className={styles.childImgContainer}>
-              <Image src="/imgCard.png" alt="" fill className={styles.img} />
+            <div className={styles.otherImgContainer}>
+              <div className={styles.childImgContainer}>
+                <Image src="/imgCard.png" alt="" fill className={styles.img} />
+              </div>
+              <div className={styles.childImgContainer}>
+                <Image src="/imgCard.png" alt="" fill className={styles.img} />
+              </div>
+              <div className={styles.childImgContainer}>
+                <Image src="/imgCard.png" alt="" fill className={styles.img} />
+              </div>
             </div>
-            <div className={styles.childImgContainer}>
-              <Image src="/imgCard.png" alt="" fill className={styles.img} />
-            </div>
+          </> */}
+          <div className={styles.sliderContainer}>
+            <Slider />
           </div>
         </div>
         <div className={styles.detailsContainer}>
