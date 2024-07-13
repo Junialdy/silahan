@@ -132,7 +132,7 @@ const Content = ({ lahans }) => {
             <SectionDetail title="Data Lahan" noedit={true}>
               <div className={styles.lahanUser}>
                 {lahans.map((lahan) => (
-                  <div className={styles.lahanContainer} key={lahan.id}>
+                  <div className={styles.lahanContainer} key={lahan._id}>
                     <ProdukCard lahan={lahan} />
                   </div>
                 ))}

@@ -1,5 +1,5 @@
-import Produk from '@/components/produk/Produk';
-import styles from './home.module.css'
+import Produk from "@/components/produk/Produk";
+import styles from "./home.module.css";
 
 const Homepage = () => {
   return (
@@ -7,7 +7,8 @@ const Homepage = () => {
       <div className={styles.heroContainer}>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>
-            Solusi Online untuk Petani dan Pemilik Lahan.
+            Solusi Online untuk Petani <br />
+            dan Pemilik Lahan.
           </h1>
           <p className={styles.desc}>
             Temukan dan sewakan lahan pertanian dengan mudah melalui platform
@@ -21,6 +22,6 @@ const Homepage = () => {
       <Produk />
     </div>
   );
-}
+};
 
 export default Homepage;

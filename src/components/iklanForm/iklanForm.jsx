@@ -11,6 +11,7 @@ const IklanForm = ({ data, aksi }) => {
       <div className={styles.formSection}>
         <h2>Detail Lahan</h2>
         <hr />
+        <input type="hidden" name="id" defaultValue={data?._id || ""} />
         <div className={styles.formInput}>
           <div className={styles.formInputCol}>
             <label>
