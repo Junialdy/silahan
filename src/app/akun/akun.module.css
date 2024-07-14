@@ -32,6 +32,11 @@
   background-color: var(--lgreen);
 }
 
+.icon {
+  font-size: large;
+  stroke-width: 0.3;
+}
+
 .details {
   /* border: 1px solid red; */
   display: flex;

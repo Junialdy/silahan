@@ -28,12 +28,11 @@ const links = [
   // },
 ];
 
-// TEMPORARY
-const session = true;
-const isAdmin = false;
-
-const Links = () => {
+const Links = ({ session }) => {
   const [open, setOpen] = useState(false);
+
+  // TEMPORARY
+  const isAdmin = false;
   return (
     <div className={styles.container}>
       <div className={styles.links}>
@@ -56,7 +55,7 @@ const Links = () => {
           <Link href="/akun" className={styles.link}>
             <Image
               className={styles.profilePic}
-              src="/noavatar.png"
+              src="https://avatars.githubusercontent.com/u/100945120?v=4"
               alt="Profile Picture"
               width={50}
               height={50}

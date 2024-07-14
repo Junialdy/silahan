@@ -2,11 +2,12 @@
 
 import styles from "./akun.module.css";
 import Image from "next/image";
-import { BsPencil } from "react-icons/bs";
+import { BsPencil, BsBoxArrowRight } from "react-icons/bs";
 
 import ProdukCard from "@/components/produk/produkList/produkCard/ProdukCard";
 import { userInfo } from "@/lib/data";
 import { useState } from "react";
+import { handleLogout } from "@/lib/action";
 
 const DataCol = ({ label, value, isEdit, type }) => {
   return (
@@ -98,6 +99,13 @@ const Content = ({ lahans }) => {
           onClick={() => setOpen(2)}
         >
           Lahan User
+        </div>
+        <div>
+          <form action={handleLogout}>
+            <button>
+              <BsBoxArrowRight className={styles.icon} /> Logout
+            </button>
+          </form>
         </div>
       </div>
       <div className={styles.details}>

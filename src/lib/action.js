@@ -5,6 +5,7 @@ import { Lahan } from "./models";
 import { connectToDb } from "./utils";
 import { customAlphabet } from "nanoid";
 import { promises as fs } from "fs";
+import { signIn, signOut } from "./auth";
 
 export const addIklan = async (formData) => {
   // const medias = formData.getAll("media");
@@ -206,14 +207,9 @@ export const deleteLahan = async (formData) => {
   redirect("/lahan");
 };
 
-// export const handleEdit = async (formData) => {
-//   "use server";
-
-//   const rawFormData = {
-//     email: formData.get("email"),
-//     nama: formData.get("nama"),
-//     nomorhp: formData.get("nomorhp"),
-//     nomorwa: formData.get("nomorwa"),
-//   };
-//   console.log(rawFormData);
-// };
+export const handleGithubLogin = async () => {
+  await signIn("github");
+};
+export const handleLogout = async () => {
+  await signOut();
+};
