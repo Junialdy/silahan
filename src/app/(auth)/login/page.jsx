@@ -1,8 +1,8 @@
-import { handleGithubLogin, login } from "@/lib/action";
+// import { handleGithubLogin, login } from "@/lib/action";
+// import { auth, signIn } from "@/lib/auth";
+// import { BsGithub } from "react-icons/bs";
 import styles from "./login.module.css";
-import { auth, signIn } from "@/lib/auth";
 import Link from "next/link";
-import { BsGithub } from "react-icons/bs";
 import LoginForm from "@/components/loginForm/loginForm";
 
 const LoginPage = async () => {
@@ -18,7 +18,7 @@ const LoginPage = async () => {
         </div>
         <hr />
         <LoginForm />
-        <div className={styles.authProvider}>
+        {/* <div className={styles.authProvider}>
           <p>atau</p>
           <form action={handleGithubLogin} className={styles.formInput}>
             <button type="submit">
@@ -26,7 +26,7 @@ const LoginPage = async () => {
               <BsGithub className={styles.icons} />
             </button>
           </form>
-        </div>
+        </div> */}
         <p className={styles.toLogin}>
           Belum memiliki akun?{" "}
           <Link href="/register">
