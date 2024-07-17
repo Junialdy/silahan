@@ -30,11 +30,11 @@ export const getLahan = async (slug) => {
   }
 };
 
-export const getUser = async (id) => {
+export const getUser = async (name) => {
   // noStore();
   try {
     connectToDb();
-    const user = await User.findById(id);
+    const user = await User.findOne({ name });
     return user;
   } catch (err) {
     console.log(err);

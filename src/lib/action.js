@@ -45,16 +45,13 @@ export const addLahan = async (formData) => {
     judul,
     desc,
     sertifikat,
-    userimg,
     jenisharga,
     harga,
     lamasewa,
     provinsi,
     kabkota,
     kecamatan,
-    username,
-    nohp,
-    nowa,
+    name,
   } = Object.fromEntries(formData);
 
   const nanoid = customAlphabet("1234567890abcdef", 5);
@@ -68,20 +65,20 @@ export const addLahan = async (formData) => {
   const isImgChange = medias[0].size > 0;
   const arrImg = [];
   if (isImgChange) {
-  const idSlug = nanoid();
-  medias.forEach(async (media) => {
-    await media
-      .arrayBuffer()
-      .then((result) =>
-        fs.writeFile(
-          `${process.cwd()}/public/tmp/${idSlug}-${media.name}`,
-          Buffer.from(result)
-        )
-      );
-  });
-  medias.forEach((media) => {
-    arrImg.push(`/tmp/${idSlug}-${media.name}`);
-  });
+    const idSlug = nanoid();
+    medias.forEach(async (media) => {
+      await media
+        .arrayBuffer()
+        .then((result) =>
+          fs.writeFile(
+            `${process.cwd()}/public/tmp/${idSlug}-${media.name}`,
+            Buffer.from(result)
+          )
+        );
+    });
+    medias.forEach((media) => {
+      arrImg.push(`/tmp/${idSlug}-${media.name}`);
+    });
   }
 
   try {
@@ -99,7 +96,7 @@ export const addLahan = async (formData) => {
       provinsi,
       kabkota,
       kecamatan,
-      userId: "667029651bff571377669c35",
+      userId: name,
       slug,
     });
     await newLahan.save();
@@ -124,10 +121,6 @@ export const updateLahan = async (formData) => {
     provinsi,
     kabkota,
     kecamatan,
-    userimg,
-    username,
-    nohp,
-    nowa,
     id,
   } = Object.fromEntries(formData);
 
@@ -180,7 +173,6 @@ export const updateLahan = async (formData) => {
       provinsi,
       kabkota,
       kecamatan,
-      userId: "667029651bff571377669c35",
       slug,
     });
     console.log("updated to db");

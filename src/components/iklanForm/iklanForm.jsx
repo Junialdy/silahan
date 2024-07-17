@@ -2,15 +2,19 @@
 
 import HargaInput from "./hargaInput/hargaInput";
 import ImgInput from "./imgInput/imgInput";
-import ProfileInput from "./profileInput/profileInput";
+// import ProfileInput from "./profileInput/profileInput";
 import styles from "./iklanForm.module.css";
+import { auth } from "@/lib/auth";
+// import CurrencyInput from "react-currency-input-field";
 
-const IklanForm = ({ data, aksi }) => {
+const IklanForm = async ({ data, aksi }) => {
+  const session = await auth();
   return (
     <form action={aksi} className={styles.form}>
       <div className={styles.formSection}>
         <h2>Detail Lahan</h2>
         <hr />
+        <input type="hidden" name="name" defaultValue={session?.user.name} />
         <input type="hidden" name="id" defaultValue={data?._id || ""} />
         <div className={styles.formInput}>
           <div className={styles.formInputCol}>
@@ -24,7 +28,7 @@ const IklanForm = ({ data, aksi }) => {
                 defaultValue={data?.luas || ""}
               />
             </label>
-            <label>
+                        <label>
               Judul iklan<em>*</em>
               <input
                 required
