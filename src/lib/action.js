@@ -65,7 +65,9 @@ export const addLahan = async (formData) => {
     .concat(`-${nanoid()}`);
 
   const medias = formData.getAll("media");
+  const isImgChange = medias[0].size > 0;
   const arrImg = [];
+  if (isImgChange) {
   const idSlug = nanoid();
   medias.forEach(async (media) => {
     await media
@@ -80,6 +82,7 @@ export const addLahan = async (formData) => {
   medias.forEach((media) => {
     arrImg.push(`/tmp/${idSlug}-${media.name}`);
   });
+  }
 
   try {
     connectToDb();
