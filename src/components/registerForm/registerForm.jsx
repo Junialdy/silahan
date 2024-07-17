@@ -31,6 +31,24 @@ const RegisterForm = () => {
         />
       </label>
       <label>
+        Nomor telepon<em>*</em>
+        <input
+          required
+          type="tel"
+          name="nomorhp"
+          placeholder="cth: 081234567890"
+        />
+      </label>
+      <label>
+        Nomor whatsapp<em>*</em>
+        <input
+          required
+          type="tel"
+          name="nomorwa"
+          placeholder="cth: 081234567890"
+        />
+      </label>
+      <label>
         Password <em>*</em>
         <input
           required

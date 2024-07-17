@@ -219,7 +219,7 @@ export const handleLogout = async () => {
 };
 
 export const register = async (previousState, formData) => {
-  const { name, email, password, passwordRepeat } =
+  const { name, email, password, passwordRepeat, nomorhp, nomorwa } =
     Object.fromEntries(formData);
 
   if (password != passwordRepeat) {
@@ -241,6 +241,8 @@ export const register = async (previousState, formData) => {
       name,
       email,
       password: hashedPassword,
+      nomorhp,
+      nomorwa,
     });
 
     await newUser.save();

@@ -8,6 +8,8 @@ export const authConfig = {
       if (user) {
         token.id = user.id;
         token.isAdmin = user.isAdmin;
+        token.nohp = user.nomorhp;
+        token.nowa = user.nomorwa;
       }
       return token;
     },
@@ -15,6 +17,8 @@ export const authConfig = {
       if (token) {
         session.user.id = token.id;
         session.user.isAdmin = token.isAdmin;
+        session.user.nohp = token.nohp;
+        session.user.nowa = token.nowa;
       }
       return session;
     },
