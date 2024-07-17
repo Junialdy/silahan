@@ -52,3 +52,25 @@ export const getUsers = async () => {
     throw new Error("Failed to fetch users!");
   }
 };
+
+export const fetchLahan = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/lahan/${slug}`);
+
+  if (!res.ok) {
+    throw new Error("Something went wrong");
+  }
+
+  return res.json();
+};
+
+export const fetchLahans = async () => {
+  const res = await fetch("http://localhost:3000/api/lahan", {
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Something went wrong");
+  }
+
+  return res.json();
+};
