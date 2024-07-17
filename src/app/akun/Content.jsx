@@ -48,7 +48,7 @@ const SectionDetail = ({ title, children, data, noedit }) => {
             <>
               <div className={styles.info}>
                 <div className={styles.leftInfo}>
-                  <DataCol label="Nama" value={data.nama} isEdit={edit} />
+                  <DataCol label="Nama" value={data.name} isEdit={edit} />
                   <DataCol label="Nomor HP" value={data.nohp} isEdit={edit} />
                 </div>
                 <div className={styles.rightInfo}>
@@ -83,7 +83,7 @@ const SectionDetail = ({ title, children, data, noedit }) => {
   );
 };
 
-const Content = ({ lahans }) => {
+const Content = ({ lahans, user }) => {
   const [open, setOpen] = useState(1);
   return (
     <div className={styles.content}>
@@ -115,19 +115,19 @@ const Content = ({ lahans }) => {
             <SectionDetail>
               <div className={styles.profileContainer}>
                 <Image
-                  src="/noavatar.png"
+                  src={user.img || "/noavatar.png"}
                   width={90}
                   height={90}
                   alt="Profile Picture"
                   className={styles.profilePic}
                 />
                 <div className={styles.userDetails}>
-                  <p className={styles.userName}>John Doe</p>
+                  <p className={styles.userName}>{user.name}</p>
                   <p className={styles.userRole}>Landowner</p>
                 </div>
               </div>
             </SectionDetail>
-            <SectionDetail title="Informasi Personal" data={userInfo} />
+            <SectionDetail title="Informasi Personal" data={user} />
             <SectionDetail title="Data lainnya">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
               exercitationem nostrum magni ullam consequuntur similique, ut
@@ -140,11 +140,13 @@ const Content = ({ lahans }) => {
           <>
             <SectionDetail title="Data Lahan" noedit={true}>
               <div className={styles.lahanUser}>
-                {lahans.map((lahan) => (
-                  <div className={styles.lahanContainer} key={lahan._id}>
-                    <ProdukCard lahan={lahan} />
-                  </div>
-                ))}
+                {lahans
+                  ? lahans.map((lahan) => (
+                      <div className={styles.lahanContainer} key={lahan._id}>
+                        <ProdukCard lahan={lahan} />
+                      </div>
+                    ))
+                  : "Tidak Memiliki lahan"}
               </div>
             </SectionDetail>
           </>
