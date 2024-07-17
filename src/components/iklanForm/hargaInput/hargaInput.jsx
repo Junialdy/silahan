@@ -50,6 +50,7 @@ const HargaInput = ({ data }) => {
             placeholder="cth: 12.000.000"
             decimalSeparator=","
             groupSeparator="."
+            maxLength={9}
             defaultValue={data?.hargamin || ""}
           />
         </label>
@@ -63,6 +64,7 @@ const HargaInput = ({ data }) => {
               placeholder="cth: 12.000.000"
               decimalSeparator=","
               groupSeparator="."
+              maxLength={9}
               defaultValue={data?.hargamin || ""}
             />
           </label>
@@ -74,6 +76,7 @@ const HargaInput = ({ data }) => {
               placeholder="cth: 12.000.000"
               decimalSeparator=","
               groupSeparator="."
+              maxLength={9}
               defaultValue={data?.hargamax || ""}
             />
           </label>
