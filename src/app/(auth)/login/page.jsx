@@ -1,18 +1,39 @@
-import { handleGithubLogin } from "@/lib/action";
+import { handleGithubLogin, login } from "@/lib/action";
 import styles from "./login.module.css";
 import { auth, signIn } from "@/lib/auth";
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
+import LoginForm from "@/components/loginForm/loginForm";
 
 const LoginPage = async () => {
-  const session = await auth();
-  console.log(session);
+  // const session = await auth();
+  // console.log(session);
 
   return (
     <div className={styles.container}>
-      <h1>Login Page</h1>
-      <hr />
-      <form action={handleGithubLogin}>
-        <button type="submit">Signin with GitHub</button>
-      </form>
+      <div className={styles.wrapper}>
+        <div>
+          <p>Selamat Datang!</p>
+          <h1>Masuk ke SiLahan</h1>
+        </div>
+        <hr />
+        <LoginForm />
+        <div className={styles.authProvider}>
+          <p>atau</p>
+          <form action={handleGithubLogin} className={styles.formInput}>
+            <button type="submit">
+              <span>Masuk dengan </span>
+              <BsGithub className={styles.icons} />
+            </button>
+          </form>
+        </div>
+        <p className={styles.toLogin}>
+          Belum memiliki akun?{" "}
+          <Link href="/register">
+            <span>Daftar</span>
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

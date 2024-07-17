@@ -35,5 +35,4 @@ const ProdukCard = ({ lahan }) => {
     </Link>
   );
 };
-
 export default ProdukCard;

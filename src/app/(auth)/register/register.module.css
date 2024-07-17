@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 50%;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.wrapper hr {
+  opacity: 0.5;
+}
+
+.toLogin {
+  text-align: center;
+}
+
+.toLogin span {
+  font-weight: 500;
+}
+.toLogin span:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}

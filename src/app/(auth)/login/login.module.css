@@ -1,7 +1,78 @@
 .container {
-  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 }
 
-.container hr {
-  margin: 20px 0;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 50%;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.wrapper hr {
+  opacity: 0.5;
+}
+
+.formInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.authProvider button {
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: var(--black);
+  /* ------------ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.authProvider {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.authProvider p {
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.icons {
+  font-size: 25px;
+}
+
+.toLogin {
+  text-align: center;
+}
+
+.toLogin span {
+  font-weight: 500;
+}
+.toLogin span:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
 }

@@ -1,11 +1,12 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { Lahan } from "./models";
+import { Lahan, User } from "./models";
 import { connectToDb } from "./utils";
 import { customAlphabet } from "nanoid";
 import { promises as fs } from "fs";
 import { signIn, signOut } from "./auth";
+import bcrypt from "bcryptjs";
 
 export const addIklan = async (formData) => {
   // const medias = formData.getAll("media");
@@ -212,4 +213,52 @@ export const handleGithubLogin = async () => {
 };
 export const handleLogout = async () => {
   await signOut();
+};
+
+export const register = async (previousState, formData) => {
+  const { name, email, password, passwordRepeat } =
+    Object.fromEntries(formData);
+
+  if (password != passwordRepeat) {
+    return { error: "Password tidak sama!" };
+  }
+
+  try {
+    connectToDb();
+
+    const user = await User.findOne({ name });
+    if (user) {
+      return { error: "Username sudah terdaftar!" };
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+    console.log("saved to db");
+    return { success: true };
+  } catch (err) {
+    console.log(err);
+    return { error: "Something went wrong!" };
+  }
+};
+
+export const login = async (prevState, formData) => {
+  const { email, password } = Object.fromEntries(formData);
+
+  try {
+    await signIn("credentials", { email, password });
+  } catch (error) {
+    // console.log(err);
+    if (error?.cause?.err?.code === "credentials") {
+      return { error: "Invalid username or password" };
+    }
+    throw error;
+  }
 };

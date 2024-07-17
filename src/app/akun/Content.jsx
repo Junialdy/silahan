@@ -102,8 +102,9 @@ const Content = ({ lahans }) => {
         </div>
         <div>
           <form action={handleLogout}>
-            <button>
-              <BsBoxArrowRight className={styles.icon} /> Logout
+            <button className={styles.logoutButton}>
+              <BsBoxArrowRight className={styles.icon} />
+              <span>Logout</span>
             </button>
           </form>
         </div>

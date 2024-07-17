@@ -27,9 +27,28 @@
   background-color: var(--lgreen);
   transition: 300ms;
 }
+.sideNav > div:last-child:hover {
+  background-color: #ff7878;
+  transition: 300ms;
+  color: white;
+  cursor: default;
+}
 
 .sideNavActive {
   background-color: var(--lgreen);
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  font-family: inherit;
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: center;
+  color: inherit;
+  cursor: pointer;
 }
 
 .icon {
@@ -67,7 +86,7 @@
 
 .lahanUser {
   display: flex;
-  gap: 3%;
+  gap: 20px;
   flex-wrap: wrap;
 }
 

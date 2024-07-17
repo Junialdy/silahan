@@ -30,9 +30,6 @@ const links = [
 
 const Links = ({ session }) => {
   const [open, setOpen] = useState(false);
-
-  // TEMPORARY
-  const isAdmin = false;
   return (
     <div className={styles.container}>
       <div className={styles.links}>
@@ -44,14 +41,12 @@ const Links = ({ session }) => {
         <Link href="/iklan" className={styles.ctaDark}>
           Pasang Iklan
         </Link>
-        {isAdmin ? (
+        {session?.user.isAdmin && (
           <Link href="/admin" className={styles.ctaWhite}>
             Admin
           </Link>
-        ) : (
-          <></>
         )}
-        {session ? (
+        {session?.user ? (
           <Link href="/akun" className={styles.link}>
             <Image
               className={styles.profilePic}
