@@ -1,10 +1,10 @@
-import { getLahans } from "@/lib/data";
+import { fetchLahans } from "@/lib/data";
 import styles from "./akun.module.css";
 import Content from "./Content";
 
 const AkunPage = async () => {
-  const lahans = await getLahans();
-  const data = JSON.parse(JSON.stringify(lahans));
+  const lahans = await fetchLahans();
+  const session = await auth();
 
   return (
     <div className={styles.container}>

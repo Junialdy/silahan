@@ -1,36 +1,22 @@
 import Image from "next/image";
 import styles from "./singleProduct.module.css";
-import { getLahan } from "@/lib/data";
 
 import Icon from "./Icon";
 import Slider from "@/components/slider/Slider";
+import { auth } from "@/lib/auth";
+import { fetchLahan, getUser } from "@/lib/data";
 
 const singleProductPage = async ({ params }) => {
   const { slug } = params;
 
-  const lahan = await getLahan(slug);
-
+  const lahan = await fetchLahan(slug);
+  const owner = await getUser(lahan.userId);
+  // console.log(session.user.id);
   return (
     <>
       {/* {console.log(lahan.desc)} */}
       <div className={styles.container}>
         <div className={styles.left}>
-          {/* <>
-            <div className={styles.parentImgContainer}>
-              <Image src="/imgCard.png" alt="" fill className={styles.img} />
-            </div>
-            <div className={styles.otherImgContainer}>
-              <div className={styles.childImgContainer}>
-                <Image src="/imgCard.png" alt="" fill className={styles.img} />
-              </div>
-              <div className={styles.childImgContainer}>
-                <Image src="/imgCard.png" alt="" fill className={styles.img} />
-              </div>
-              <div className={styles.childImgContainer}>
-                <Image src="/imgCard.png" alt="" fill className={styles.img} />
-              </div>
-            </div>
-          </> */}
           <div className={styles.sliderContainer}>
             <Slider />
           </div>
@@ -62,14 +48,14 @@ const singleProductPage = async ({ params }) => {
               <div className={styles.profile}>
                 <Image
                   className={styles.avatar}
-                  src="/noavatar.png"
+                  src={owner.img || "/noavatar.png"}
                   alt=""
                   width={40}
                   height={40}
                 />
-                <p className={styles.username}>Muhammad Abrar Siddiq</p>
+                <p className={styles.username}>{owner.name}</p>
               </div>
-              <Icon idlahan={lahan.id} slug={slug} />
+              <Icon idlahan={lahan._id} slug={slug} />
             </div>
           </div>
           <div className={styles.buttons}>

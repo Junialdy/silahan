@@ -1,10 +1,11 @@
 import styles from "./produkList.module.css";
 import Filter from "./filter/Filter";
-import { getLahans } from "@/lib/data";
 import ProdukRender from "./produkRender/ProdukRender";
+import { fetchLahans } from "@/lib/data";
 
 const ProdukList = async () => {
-  const lahans = await getLahans();
+  const lahans = await fetchLahans();
+  // const lahans = await getLahans();
   return (
     <div className={styles.container}>
       <Filter />
