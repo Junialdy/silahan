@@ -156,18 +156,6 @@ const IklanForm = ({ data, aksi }) => {
           <div className={styles.formInputCol}></div>
         </div>
       </div>
-      <div className={styles.formSection}>
-        <h2>Detail Kontak</h2>
-        <hr />
-        <div className={styles.formInput}>
-          <div className={styles.formInputCol}>
-            <ProfileInput data={data} />
-          </div>
-          {/* DIV FOR SPLIT */}
-          <div className={styles.formInputCol}></div>
-        </div>
-      </div>
-      <hr />
       <button className={styles.button} type="submit">
         Pasang Iklan
       </button>
